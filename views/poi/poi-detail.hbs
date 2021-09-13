@@ -2,6 +2,9 @@
 
 <h3>Description: {{snippet}}</h3>
 <p>Rating: {{score}}</p>
-{{images}}
+{{#each images}}
+<img src="{{source_url}}" />
+{{/each}}
+
 
 
