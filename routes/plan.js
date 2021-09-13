@@ -1,6 +1,12 @@
 const router = require("express").Router();
 const { default: axios } = require("axios");
+
 const locationId = "Lisbon"
+
+ function request() {
+    return axios.get(`https://www.triposo.com/api/20210615/poi.json?location_id=${locationId}&count=10&account=${process.env.TRIPOSO_ACCOUNT}&token=${process.env.TRIPOSO_TOKEN}`)
+}
+
 
 router.get("/profile", (req, res) => {
     res.render("plan/profile-plan-list");
@@ -9,10 +15,8 @@ router.get("/profile", (req, res) => {
 
 
 router.get("/create-plan", async (req, res) => {
-    const request = await axios.get(`https://www.triposo.com/api/20210615/poi.json?location_id=${locationId}&count=10&account=${process.env.TRIPOSO_ACCOUNT}&token=${process.env.TRIPOSO_TOKEN}`)
-    const listOfPlaces = request.data.results
-    console.log(listOfPlaces)
-    res.render("plan/plan-create", {listOfPlaces});
+    const response = await request();
+    res.render("plan/plan-create", {listOfPlaces: response.data.results});
 });
 
 router.post("/create-plan", (req, res) => {
@@ -24,9 +28,8 @@ router.get("/edit-plan", (req, res) => {
 });
 
 router.get("/poi-detail/:id", async (req, res) => {
-    const request = await axios.get(`https://www.triposo.com/api/20210615/poi.json?id=${req.params.id}&count=10&account=${process.env.TRIPOSO_ACCOUNT}&token=${process.env.TRIPOSO_TOKEN}`)
-    const place = request.data.results[0]
-    console.log("the place", place)
+    const response = await request();
+    const place = response.data.results[0];
     res.render("poi/poi-detail", place);
 });
 
