@@ -7,64 +7,66 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-            <form action=""></form>
-            <table>
-                <thead>
-                    <tr>
-                        <th>
-                            <form action="/title" method="POST">
-                                <input type="text" name="title" placeholder="Title">
-                                {{!-- <button type="submit"></button> --}}
-                            </form>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {{!-- <tr>
-                        <td>
-                            <h2>Day 1</h2>
-                            <form action="/delete-day" method="POST">
-                                <button type="submit">Delete Day</button>
-                            </form>
-                            <ul>
-                                <li>
-                                    Plan Item 1
-                                    <form action="/delete-item" method="POST">
-                                        <button type="submit">Delete</button>
-                                    </form>
-                                </li>
-                                <li>
-                                    Plan Item 2
-                                    <form action="/delete-item" method="POST">
-                                        <button type="submit">Delete</button>
-                                    </form>
-                                </li>
-                                <li>
-                                    Plan Item 3
-                                    <form action="/delete-item" method="POST">
-                                        <button type="submit">Delete</button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr> --}}
-                    <tr>
-                        <td>
-                            <form action="/add-day" method="POST">
-                                <button type="submit">Add Day</button>
-                            </form>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <form action="/create-plan" method="POST">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="text" name="name" placeholder="Plan Name">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{!-- <tr>
+                            <td>
+                                <h2>Day 1</h2>
+                                <form action="/delete-day" method="POST">
+                                    <button type="submit">Delete Day</button>
+                                </form>
+                                <ul>
+                                    <li>
+                                        Plan Item 1
+                                        <form action="/delete-item" method="POST">
+                                            <button type="submit">Delete</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        Plan Item 2
+                                        <form action="/delete-item" method="POST">
+                                            <button type="submit">Delete</button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        Plan Item 3
+                                        <form action="/delete-item" method="POST">
+                                            <button type="submit">Delete</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr> --}}
+                        <tr>
+                            <td>
+                                <form action="/add-day" method="POST">
+                                    <button type="submit">Add Day</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="submit">Submit Plan</button>
+            </form>
+            <form action="/discard-plan" method="POST">
+                <button type="submit">Discard Plan</button>
+            </form>
         </div>
         <div class="col-md-6">
             <table>
                 <thead>
                     <tr>
                         <th>
-                            <form action="/search" method="GET">
-                                <input type="text" name="searchItems" placeholder="Location">
+                            <form action="/search-location" method="GET">
+                                <input type="text" name="searchLocation" placeholder="Location">
                                 <button type="submit">Search</button>
                             </form>
                         </th>
@@ -74,24 +76,14 @@
                     <tr>
                         <td>
                             <ul>
-                                <li>
-                                    Plan Option 1
-                                    <form action="/add-item" method="POST">
-                                        <button type="submit">Add</button>
-                                    </form>
-                                </li>
-                                <li>
-                                    Plan Option 2
-                                    <form action="/add-item" method="POST">
-                                        <button type="submit">Add</button>
-                                    </form>
-                                </li>
-                                <li>
-                                    Plan Option 3
-                                    <form action="/add-item" method="POST">
-                                        <button type="submit">Add</button>
-                                    </form>
-                                </li>
+                                {{#each listOfPlaces}}
+                                    <li>
+                                        <a href="/poi-detail/{{id}}">{{name}}</a>
+                                        <form action="/add-item" method="POST">
+                                            <button type="submit">Add</button>
+                                        </form>
+                                    </li>
+                                {{/each}}
                             </ul>
                         </td>
                     </tr>
@@ -99,39 +91,5 @@
             </table>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <form action="/Submit-plan" method="POST">
-                <button type="submit">Submit Plan</button>
-            </form>
-        </div>
-    </div>
 </div>
-<h1>Start creating your plan</h1>
 
-
-<form action="/create-plan" method="POST">
-   
-    {{#each listOfPlaces}}
-    <div>
-        <input type="checkbox" value="{{name}}">
-       <a href="/poi-detail/{{id}}">{{name}}</a>
-    </div>
-    {{/each}}
-
-    <button type="submit">Add to your plan</button>
-</form>
-
-
-
-{{!-- <form action="/create-plan" method="POST">
-   
-    {{#each listOfPlaces}}
-    <div>
-        <input type="checkbox" value="{{name}}">
-        <label>{{name}}</label>
-    </div>
-    {{/each}}
-
-    <button type="submit">Add to your plan</button>
-</form> --}}
