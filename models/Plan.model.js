@@ -1,12 +1,18 @@
 const mongoose = require("mongoose");
 
 const planSchema = mongoose.Schema(
-    {
+  {
+    name: String,
+    days: [
+      {
         name: String,
-    },
-    {
-        timestamps: true,
-    }
+        ids: Array,
+      },
+    ],
+  },
+  {
+    timestamps: true,
+  }
 );
 
 const Plan = mongoose.model("Plan", planSchema);

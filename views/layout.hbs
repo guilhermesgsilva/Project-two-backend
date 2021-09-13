@@ -35,7 +35,10 @@
                         <a class="nav-link" href="/login">Log In</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Log Out</a>
+                        {{!-- <a class="nav-link" href="#">Log Out</a> --}}
+                        <form class="nav-link" action="/logout" method="POST">
+                            <button type="submit">Log Out</button>
+                        </form>
                     </li>
                 </ul>
             </div>
