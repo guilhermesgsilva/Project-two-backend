@@ -107,3 +107,31 @@
         </div>
     </div>
 </div>
+<h1>Start creating your plan</h1>
+
+
+<form action="/create-plan" method="POST">
+   
+    {{#each listOfPlaces}}
+    <div>
+        <input type="checkbox" value="{{name}}">
+       <a href="/poi-detail/{{id}}">{{name}}</a>
+    </div>
+    {{/each}}
+
+    <button type="submit">Add to your plan</button>
+</form>
+
+
+
+{{!-- <form action="/create-plan" method="POST">
+   
+    {{#each listOfPlaces}}
+    <div>
+        <input type="checkbox" value="{{name}}">
+        <label>{{name}}</label>
+    </div>
+    {{/each}}
+
+    <button type="submit">Add to your plan</button>
+</form> --}}
