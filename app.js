@@ -32,6 +32,8 @@ const auth = require("./routes/auth");
 app.use("/", auth);
 const plan = require("./routes/plan");
 app.use("/", plan);
+const poi = require("./routes/poi");
+app.use("/", poi);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
