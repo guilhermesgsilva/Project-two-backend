@@ -1,19 +1,18 @@
 <div class="container-fluid">
     <div class="row"> 
-     <div  class="col-md-12"> <h1>Explore and start planning</h1> 
-     </div> 
-     </div> 
-<div class="row"> {{#each listOfPlaces}}
-    <div class="col-md-3"> 
-
-<a href="/poi-detail/{{id}}">{{name}}</a>
-<img src="{{images.0.source_url}}" width="200px" height="200px" />
-{{!-- <form action="/add-item" method="POST">
-<button type="submit">Add</button> --}}
-{{!-- </form> --}}
-
-    </div>{{/each}}
+        <div  class="col-md-12"><h1>Explore and start planning</h1> </div> 
+    </div> 
+    <div class="row">
+        {{#each listOfPlaces}}
+            <div class="col-md-3"> 
+                <a href="/poi-detail/{{id}}">{{name}}</a>
+                <img src="{{images.0.source_url}}" width="200px" height="200px" />
+                {{!-- <form action="/add-item" method="POST">
+                <button type="submit">Add</button>
+                </form> --}}
+            </div>
+        {{/each}}
+    </div>
 </div>
- </div>
 
 

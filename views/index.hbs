@@ -1,23 +1,25 @@
 <div class="container-fluid">
     <div class="row"> 
-     <div  class="col-md-12"> <h1>Welcome to MyTrip</h1> 
-     <form action="/search-location" method="GET">
-         <input type="text" name="searchLocation" placeholder="Where do you want to go?">
-         <button type="submit">Search</button>
-    </form>
-     </div>
+        <div  class="col-md-12"> <h1>Welcome to MyTrip</h1> 
+            <form action="/search-location" method="GET">
+                <input type="text" name="searchLocation" placeholder="Where do you want to go?">
+                <button type="submit">Search</button>
+            </form>
+        </div>
     </div>
-     <div class="row"> 
-     <div class="col-md-12"> <h1> Check the top rated places in 2021</h1>  </div>
-     </div>
-     <div id="homeimage" class="row"> {{#each listOfPlaces}}
-     <div  class= "col-md-4" class="card" style="width: 18rem;">  
-        <img class="card-img-top" src="{{images.0.source_url}}" width="200px" />
-         <h5 class="card-title">{{name}}in {{location_id}}</h5> 
-         <p class="card-text">{{snippet}}</p>
-        <p class="card-text">Rated: {{score}}</p>
-        <a href="/poi-detail/{{id}}" class="btn btn-primary">Explore</a>
-     </div>{{/each}}
-     </div>  
+    <div class="row"> 
+        <div class="col-md-12"><h1>Check the top rated places in 2021</h1></div>
+    </div>
+    <div id="homeimage" class="row">
+        {{#each listOfPlaces}}
+            <div  class= "col-md-4" class="card" style="width: 18rem;">  
+                <img class="card-img-top" src="{{images.0.source_url}}" width="200px" />
+                <h5 class="card-title">{{name}}in {{location_id}}</h5> 
+                <p class="card-text">{{snippet}}</p>
+                <p class="card-text">Rated: {{score}}</p>
+                <a href="/poi-detail/{{id}}" class="btn btn-primary">Explore</a>
+            </div>
+        {{/each}}
+    </div>  
 </div>
  
