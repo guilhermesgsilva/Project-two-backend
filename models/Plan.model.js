@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const planSchema = mongoose.Schema(
   {
-    name: String,
+    planName: String,
     days: [
       {
         name: String,
