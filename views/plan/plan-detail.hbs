@@ -1,0 +1,30 @@
+<h1>Plan Detail</h1>
+<table>
+    <thead>
+        <tr>
+            <th>
+                <h2>My Trip to {{planName}}</h2>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each days}}
+        <tr>
+            <td>
+                <h3>Day {{math @index "+" 1}}</h3> 
+                <ul>
+                    {{#each ids}}
+                    <li>{{name}}</li>
+                    {{/each}}
+                </ul>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<form action="/profile/{{id}}/edit" method="GET">
+    <button type="submit">Edit</button>
+</form>
+<form action="/profile/{{id}}/delete" method="POST">
+    <button type="submit">Delete</button>
+</form>

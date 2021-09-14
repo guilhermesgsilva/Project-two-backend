@@ -10,7 +10,7 @@
             <ul>
                 {{#each plans}}
                     <li>
-                        <a href="">My Trip to {{planName}}</a>
+                        <a href="/profile/{{id}}">My Trip to {{planName}}</a>
                         <form action="/profile/{{id}}/edit" method="GET">
                             <button type="submit">Edit</button>
                         </form>

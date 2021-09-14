@@ -2,73 +2,60 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Edit</h1>    
+            <h1>Edit Plan</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
-            <form action="/create-plan" method="POST">
+            {{!-- <form action="" method=""> --}}
                 <table>
                     <thead>
                         <tr>
                             <th>
-                                <input type="text" name="name" placeholder="Plan Name">
+                                <h2>My Trip to {{plan.planName}}</h2>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{!-- <tr>
-                            <td>
-                                <h2>Day 1</h2>
-                                <form action="/delete-day" method="POST">
-                                    <button type="submit">Delete Day</button>
-                                </form>
-                                <ul>
-                                    <li>
-                                        Plan Item 1
-                                        <form action="/delete-item" method="POST">
-                                            <button type="submit">Delete</button>
-                                        </form>
-                                    </li>
-                                    <li>
-                                        Plan Item 2
-                                        <form action="/delete-item" method="POST">
-                                            <button type="submit">Delete</button>
-                                        </form>
-                                    </li>
-                                    <li>
-                                        Plan Item 3
-                                        <form action="/delete-item" method="POST">
-                                            <button type="submit">Delete</button>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr> --}}
+                        {{#each plan.days}}
                         <tr>
                             <td>
-                                <form action="/add-day" method="POST">
+                                <h3>Day {{math @index "+" 1}}</h3> 
+                                <ul>
+                                    {{#each ids}}
+                                    <li><a href="/poi-detail/{{id}}">{{name}}</a></li>
+                                    <form action="/delete-item/{{../../plan.id}}/{{id}}" method="POST">
+                                        <button type="submit">Delete</button>
+                                    </form>
+                                    {{/each}}
+                                </ul>
+                            </td>
+                        </tr>
+                        {{/each}}
+                        <tr>
+                            <td>
+                                <form action="/add-day/{{plan._id}}" method="POST">
                                     <button type="submit">Add Day</button>
+                                </form>
+                                <form action="/delete-day/{{plan._id}}" method="POST">
+                                    <button type="submit">Delete Day</button>
                                 </form>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <button type="submit">Submit Plan</button>
+                {{!-- <button type="submit">Save Changes</button>
             </form>
-            <form action="/discard-plan" method="POST">
-                <button type="submit">Discard Plan</button>
-            </form>
+            <form action="" method="GET">
+                <button type="submit">Discard Changes</button>
+            </form> --}}
         </div>
         <div class="col-md-6">
             <table>
                 <thead>
                     <tr>
                         <th>
-                            <form action="/search-location" method="GET">
-                                <input type="text" name="searchLocation" placeholder="Location">
-                                <button type="submit">Search</button>
-                            </form>
+                            <h2>Points of Interest:</h2>
                         </th>
                     </tr>
                 </thead>
@@ -79,7 +66,7 @@
                                 {{#each listOfPlaces}}
                                     <li>
                                         <a href="/poi-detail/{{id}}">{{name}}</a>
-                                        <form action="/add-item" method="POST">
+                                        <form action="/add-item/{{../plan.id}}/{{id}}" method="POST">
                                             <button type="submit">Add</button>
                                         </form>
                                     </li>
@@ -89,6 +76,13 @@
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/profile/{{plan.id}}/delete" method="POST">
+                <button type="submit">Delete Plan</button>
+            </form>
         </div>
     </div>
 </div>

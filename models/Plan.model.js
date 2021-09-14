@@ -5,7 +5,6 @@ const planSchema = mongoose.Schema(
     planName: String,
     days: [
       {
-        name: String,
         ids: Array,
       },
     ],

@@ -11,35 +11,13 @@ router.get("/profile", async (req, res) => {
 // CREATE
 router.post("/create-plan", async (req, res) => {
     const {planName} = req.body;
-    await Plan.create({planName});
+    await Plan.create({
+        planName,
+        days: {
+            ids:[]
+        }
+    });
     res.redirect("/profile");
-});
-
-router.get("/search-location", async (req, res) => {
-    const locationId = req.query.searchLocation
-    const request = await axios.get(`https://www.triposo.com/api/20210615/poi.json?location_id=${locationId}&count=10&account=${process.env.TRIPOSO_ACCOUNT}&token=${process.env.TRIPOSO_TOKEN}`)
-    const listOfPlaces = request.data.results;
-    res.render("plan/plan-edit", {listOfPlaces});
-});
-
-
-router.post("/add-day", (req, res) => {
-
-});
-
-router.post("/delete-day", (req, res) => {
-});
-
-router.post("/add-item", (req, res) => { 
-});
-
-router.post("/delete-item", (req, res) => { 
-});
-
-// EDIT
-router.get("/profile/:planId/edit", async (req, res) => {
-    const plan = await Plan.findById(req.params.planId);
-    res.render("plan/plan-edit", plan);
 });
 
 // DELETE
@@ -47,5 +25,68 @@ router.post("/profile/:planId/delete", async (req, res) => {
     await Plan.findByIdAndDelete(req.params.planId);
     res.redirect("/profile");
 })
+
+// EDIT
+router.get("/profile/:planId/edit", async (req, res) => {
+    const plan = await Plan.findById(req.params.planId);
+    const planName = plan.planName;
+    const request = await axios.get(`https://www.triposo.com/api/20210615/poi.json?location_id=${planName}&count=10&account=${process.env.TRIPOSO_ACCOUNT}&token=${process.env.TRIPOSO_TOKEN}`)
+    const listOfPlaces = request.data.results;
+    res.render("plan/plan-edit", {plan, listOfPlaces});
+});
+
+// ADD DAY
+router.post("/add-day/:planId", async (req, res) => {
+    await Plan.findByIdAndUpdate(req.params.planId, {
+        $push:{
+            days: {
+                ids:[]
+            }
+        }
+    });
+    res.redirect(`/profile/${req.params.planId}/edit`)
+});
+
+// DELETE DAY
+router.post("/delete-day/:planId", async (req, res) => {
+    await Plan.findByIdAndUpdate(req.params.planId, {
+        $pop:{
+            days:1
+        }
+    });
+    res.redirect(`/profile/${req.params.planId}/edit`)
+});
+
+// ADD ITEM
+router.post("/add-item/:planId/:poiId", async (req, res) => {
+    const request = await axios.get(`https://www.triposo.com/api/20210615/poi.json?id=${req.params.poiId}&account=${process.env.TRIPOSO_ACCOUNT}&token=${process.env.TRIPOSO_TOKEN}`)
+    const place = request.data.results[0];
+    console.log(place);
+    await Plan.findByIdAndUpdate(req.params.planId, {
+        $push:{
+            "days.1.ids" : place // Get the index !!!!!
+        }
+    });
+    res.redirect(`/profile/${req.params.planId}/edit`);
+});
+
+// DELETE ITEM
+router.post("/delete-item/:planId/:poiId", async (req, res) => {
+    const request = await axios.get(`https://www.triposo.com/api/20210615/poi.json?id=${req.params.poiId}&account=${process.env.TRIPOSO_ACCOUNT}&token=${process.env.TRIPOSO_TOKEN}`)
+    const place = request.data.results[0];
+    
+    await Plan.findByIdAndUpdate(req.params.planId, {
+        $pop:{
+            // I need to get the day and the index of the item I want to delete !!!!!
+        }
+    });
+    res.redirect(`/profile/${req.params.planId}/edit`);
+});
+
+// DETAIL
+router.get("/profile/:planId", async (req, res) => {
+    const plan = await Plan.findById(req.params.planId);
+    res.render("plan/plan-detail", plan);
+});
 
 module.exports = router;
