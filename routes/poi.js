@@ -9,3 +9,10 @@ router.get("/poi-detail/:id", async (req, res) => {
 });
 
 module.exports = router;
+
+
+
+
+
+
+

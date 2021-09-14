@@ -10,3 +10,15 @@ a {
 h1 {
   color: 15px;
 }
+
+
+.homeimage h1{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#homeimage{
+  display:flex;
+  justify-content: space-between;
+
+}
