@@ -66,6 +66,12 @@
                                     <li>
                                         <a href="/poi-detail/{{id}}">{{name}}</a>
                                         <form action="/add-item/{{../plan.id}}/{{id}}" method="POST">
+                                            <select name="planDay">
+                                                <option value="-1">Day</option>
+                                                {{#each ../plan.days}}
+                                                <option value="{{@index}}">{{math @index "+" 1}}</option>
+                                                {{/each}}
+                                            </select>
                                             <button type="submit">Add</button>
                                         </form>
                                     </li>
