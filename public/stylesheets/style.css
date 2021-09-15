@@ -1,6 +1,7 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px  "Trip Sans VF","Trip Sans",Arial,sans-serif;;
+ 
 }
 
 a {
@@ -21,4 +22,40 @@ h1 {
   display:flex;
   justify-content: space-between;
 
+}
+
+.placeholder{
+  min-height: 4em;
+  align-items: center;
+  background-color:#ffffff;
+  opacity:50;
+  border-style:groove;
+}
+
+
+.searchform{
+  background-image: url("/images/claudio-schwarz-kxAaw2bO1Z8-unsplash.jpg");
+  background-size:cover;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  display: flex;
+  align-content: center;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.searchtitle{
+    align-self: center;
+    position: absolute;
+    padding-top: 100px;
+    align-items: center;
+    color:white;
+}
+
+.searchtitleflex{
+  display: flex;
+    flex-direction: column;
+}
 }
