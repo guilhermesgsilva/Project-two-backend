@@ -28,6 +28,32 @@ const app = express();
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
+const session = require("express-session");
+app.use(
+  session({
+ secret: process.env.SESSION_SECRET,
+ cookie: {
+ sameSite: true, //both fe and be are running on the same hostname
+ httpOnly: true, //we are not using https
+ maxAge: 60000, //session time
+    },
+    rolling: true,
+  })
+);
+
+// Adding logins
+
+function getCurrentLoggedUser(req, res, next) {
+  if (req.session && req.session.currentUser) {
+    app.locals.loggedInUser = req.session.currentUser.username;
+  } else {
+    app.locals.loggedInUser = "";
+  }
+  next();
+}
+
+app.use(getCurrentLoggedUser);
+
 // default value for title local
 const projectName = "Project-two-backend";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
