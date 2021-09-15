@@ -25,6 +25,14 @@ router.get("/", async (req, res) => {
 });
 
 
+// router.get("/", async (req, res) => {
+//   console.log("home")
+//   const request = await axios.get(`https://www.triposo.com/api/20210615/poi.json?order_by=-score&count=3&account=${process.env.TRIPOSO_ACCOUNT}&token=${process.env.TRIPOSO_TOKEN}`)  
+//   const listOfPlaces = request.data.results;
+//   console.log(listOfPlaces[0].images);
+//   res.render("index", {listOfPlaces});
+// });
+
 
 
 // const request = await axios.get(`https://www.triposo.com/api/20210615/poi.json?id=${req.params.id}&count=10&account=${process.env.TRIPOSO_ACCOUNT}&token=${process.env.TRIPOSO_TOKEN}`)
