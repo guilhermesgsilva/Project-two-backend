@@ -1,33 +1,45 @@
 const router = require("express").Router();
 const { default: axios } = require("axios");
 const Plan = require("../models/Plan.model");
+const User = require("../models/User.model");
+
+function requireLogin(req, res, next) {
+    if (req.session.currentUser) {
+        next();
+    } else {
+        res.redirect("/login");
+    }
+}
 
 // LIST
-router.get("/profile", async (req, res) => {
-  const plans = await Plan.find();
+router.get("/profile", requireLogin, async (req, res) => {
+  const user = await User.findById(req.session.currentUser._id);
+  const plans = await Plan.find({ user });
   res.render("plan/profile-plan-list", { plans });
 });
 
 // CREATE
 router.post("/create-plan", async (req, res) => {
+  const user = await User.findById(req.session.currentUser._id);
   const { planName } = req.body;
   await Plan.create({
     planName,
     days: {
       ids: [],
     },
+    user
   });
-  res.redirect("/profile");
+  res.redirect(`/profile`);
 });
 
 // DELETE
 router.post("/profile/:planId/delete", async (req, res) => {
   await Plan.findByIdAndDelete(req.params.planId);
-  res.redirect("/profile");
+  res.redirect(`/profile/plans`);
 });
 
 // EDIT
-router.get("/profile/:planId/edit", async (req, res) => {
+router.get("/:userId/:planId/edit", requireLogin, async (req, res) => {
   const plan = await Plan.findById(req.params.planId);
   const planName = plan.planName;
   const request = await axios.get(
@@ -98,7 +110,7 @@ router.post("/delete-item/:planId/:poiId", async (req, res) => {
 });
 
 // DETAIL
-router.get("/profile/:planId", async (req, res) => {
+router.get("/profile/:planId", requireLogin, async (req, res) => {
   const plan = await Plan.findById(req.params.planId);
   res.render("plan/plan-detail", plan);
 });

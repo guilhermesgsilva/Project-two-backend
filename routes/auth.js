@@ -30,7 +30,7 @@ await User.create({
 username,
 password: hashedPassword,
  });
- res.redirect("/");
+ res.redirect("/login");
 });
   
 router.post("/login", async (req, res) => {
@@ -48,14 +48,14 @@ return;}
   
 if (bcrypt.compareSync(password, user.password)) {
 req.session.currentUser = user;
-res.redirect("/");
+res.redirect("/profile");
 } else {
 res.render("auth/login", {errorMessage: "Invalid login" });
 }
   });
 
 router.post("/logout", (req, res) => {
-    // req.session.destroy();
+    req.session.destroy();
     res.redirect("/");
 });
 
