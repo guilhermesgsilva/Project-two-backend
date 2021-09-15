@@ -8,6 +8,8 @@ router.get("/poi-detail/:id", async (req, res) => {
     res.render("poi/poi-detail", place);
 });
 
+
+
 module.exports = router;
 
 
