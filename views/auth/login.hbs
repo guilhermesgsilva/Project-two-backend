@@ -1,15 +1,15 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Log In</h1>
+<div id="loginpage" class="container">
+    <div id="section1-login" class="login-card" class="row">
+        <div class="col-md-12 card-body" >
+            <h1 class="login-card-description">Log in to your account</h1>
             <form action="/login" method="POST">
                 <label for="">Username</label>
-                <input type="text" name="username" required>
+                <input  class="form-control"  type="text" name="username" required>
 
-                <label for="">Password</label>
-                <input type="password" name="password" required>
+                <label  for="">Password</label>
+                <input class="form-control"  type="password" name="password" required>
 
-                <button type="submit">Login</button>
+                <button class="btn btn-block login-btn"type="submit">Login</button>
             </form>
             {{#if errorMessage}}
                 <p>{{errorMessage}}</p>
