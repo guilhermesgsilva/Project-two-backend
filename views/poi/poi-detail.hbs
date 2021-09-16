@@ -1,46 +1,28 @@
 <div class="container-fluid">
 <div class="row"> 
-<div class="col-md-12">
+<div id="poidetails" class="col-md-12">
 <div> 
 <h1>{{name}}</h1>
 <p>{{snippet}} </p>
 <p>Traveler's rating: {{score}}</p> 
-</div>
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">  
-    <div class="carousel-item active">
-      <img src="{{images.0.source_url}}" class="d-block w-100" alt="image1">
+   <h4 id="h4poidetails">Check some of the main point of interest around {{name}} </h4>
+</div> 
+</div> 
+</div> 
+ <div class="row">
+        {{#each images}}
+            <div class="col-md-4 listOfLocations"> 
+                <img class="img-thumbnail img-fluid" src="{{source_url}}" alt="image1" />
+            </div>
+        {{/each}}
     </div>
-    <div class="carousel-item">
-      <img src="{{images.1.source_url}}" class="d-block w-100" alt="image2">
-    </div>
-    <div class="carousel-item">
-      <img src="{{images.2.source_url}}" class="d-block w-100" alt="image3">
-    </div> 
-  </div> 
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>     
-</div>
+
 <div> 
 <button onclick="goBack()">Go Back</button>
 <script> function goBack() {window.history.back();} </script>
 </div>
-</div>
-</div> 
-</div>   
+ </div>
+
+ 
 
 
- {{!-- {{#each images}}
-            <img src="{{source_url}}" class="d-block w-100" alt="imagegohere" />
-            {{/each}} --}}

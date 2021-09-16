@@ -5,7 +5,7 @@
     <div class="row">
         {{#each listOfPlaces}}
             <div class="col-md-3 listOfLocations"> 
-                <a href="/poi-detail/{{id}}">{{name}}</a>
+                <a id="listLinks" href="/poi-detail/{{id}}">{{name}}</a>
                 <img class="img-thumbnail img-fluid" src="{{images.0.source_url}}" />
                 {{!-- <form action="/add-item" method="POST">
                 <button type="submit">Add</button>

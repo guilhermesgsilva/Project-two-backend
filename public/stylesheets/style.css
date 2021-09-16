@@ -12,10 +12,10 @@ a:link {
 }
 
 /* visited link */
-a:visited {
+/* a:visited {
   color: #303841 !important;
   text-decoration: none;
-} */
+} */ */
 
 /* mouse over link */
 a:hover {
@@ -121,9 +121,9 @@ border-radius: 5px;
   border-radius: 10px;
 }
 
-h5{
+#h5homecard h5{
 font-size: 1rem;
-text-shadow: 2px 2px #cbcdd1;
+text-shadow: 1px 1px #cbcdd1;
 }
 
 
@@ -149,6 +149,12 @@ text-shadow: 2px 2px #cbcdd1;
   text-shadow: 1px 1px rgb(231, 234, 235);
  }
 
+ #poidetails h1{
+  font-size: 2rem;
+  font-weight: bolder;
+  text-shadow: 1px 1px rgb(231, 234, 235);
+
+ }
 
  .login-card{ 
   margin-top: 100px;
@@ -185,6 +191,11 @@ text-shadow: 2px 2px #cbcdd1;
   margin-bottom: 23px; }
 
   #h4homecard{
+    font-weight: bold;
+    font-size: medium;
+  }
+
+  #h4poidetails{
     font-weight: bold;
     font-size: medium;
   }
@@ -230,8 +241,11 @@ text-shadow: 2px 2px #cbcdd1;
     flex-direction: column;
     align-items: center;}
 
+#listLinks a:link{
+  color:#FF5722;
+}
 
-    hr {
+hr {
    margin: 0rem 0;
     color: #fe5722;
     opacity: 0.9;
@@ -241,10 +255,10 @@ text-shadow: 2px 2px #cbcdd1;
     height: 4px;
 }
 
-}
+
 
 .btn {
-  background-color: DodgerBlue;
+
   border: none;
   color: white;
   padding: 12px 16px;
@@ -253,7 +267,7 @@ text-shadow: 2px 2px #cbcdd1;
 }
 
 .btn:hover {
-  background-color: RoyalBlue;
+  background-color: black;
 }
 
 .day-btn {
@@ -277,3 +291,7 @@ text-shadow: 2px 2px #cbcdd1;
   align-items: center;
 }
 
+.carousel-inner img{
+  height:75vh;
+
+}
