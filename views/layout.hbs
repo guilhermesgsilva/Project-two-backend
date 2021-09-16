@@ -16,42 +16,42 @@
 
    <body>
       <div class="container-fluid">
-        <div class="row">
-        <div class="col-md-6">
-                <ul class="nav align-items-center">
-                    <li class="nav-item">
-                        <img src="/images/logo.png" alt="" width="200px">
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    {{#if loggedInUser}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/profile">Profile</a>
-                    </li>
-                    {{/if}}
-                </ul>
-            </div>
+        <div class="row align-items-center">
             <div class="col-md-6">
-                <ul class="nav justify-content-end" >
-                    {{#if loggedInUser}}
-                    <li class="nav-item">
-                        {{!-- <a class="nav-link" href="#">Log Out</a> --}}
-                        <form class="nav-link" action="/logout" method="POST">
-                            <button type="submit">Log Out</button>
-                        </form>
-                    </li>
-                    {{else}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/signup">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Log In</a>
-                    </li>
-                    {{/if}}
-                </ul>
+                    <ul class="nav align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/"><img src="/images/logo.png" alt="" width="200px"></a>
+                        </li>
+                        {{!-- <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li> --}}
+                        {{#if loggedInUser}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/profile">Profile</a>
+                        </li>
+                        {{/if}}
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="nav justify-content-end" >
+                        {{#if loggedInUser}}
+                        <li class="nav-item">
+                            {{!-- <a class="nav-link" href="#">Log Out</a> --}}
+                            <form class="nav-link" action="/logout" method="POST">
+                                <button type="submit">Log Out</button>
+                            </form>
+                        </li>
+                        {{else}}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/signup">Sign Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Log In</a>
+                        </li>
+                        {{/if}}
+                    </ul>
+                </div>
             </div>
-         </div>
       </div>
       <main>
          {{{body}}}

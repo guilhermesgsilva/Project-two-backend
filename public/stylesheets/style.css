@@ -1,5 +1,9 @@
+.row-margin-top-30 {
+  margin-top: 30px;
+}
+
 body {
-  padding: 50px;
+  padding: 0px 50px 25px;
   font: 14px  "Trip Sans VF","Trip Sans",Arial,sans-serif;
   background-color:#ffffff; 
   color:#303841;
@@ -15,7 +19,7 @@ a:link {
 a:visited {
   color: #303841 !important;
   text-decoration: none;
-} */
+}
 
 /* mouse over link */
 a:hover {
@@ -80,16 +84,13 @@ ul {
   flex-wrap: nowrap;
 }
 
-.create-form {
-  display: flex;
-}
 
 .create-form input {
   min-height: 4em;
   background-color:#ffffff;
   border-style:groove;
   border-color: ivory;
-  width: 35%
+  /* width: 35% */
 }
 
 button{
@@ -112,9 +113,6 @@ border-radius: 5px;
     flex-direction: column;
 }
 
-.row{
-  padding-top: 30px;
-}
 
 .card-img-top{
   padding-bottom: 10px;
@@ -123,10 +121,11 @@ border-radius: 5px;
 
 h5{
 font-size: 1rem;
-text-shadow: 2px 2px #cbcdd1;
 }
 
-
+.margin-top-10 {
+  margin-top: 10px;
+}
 
 #section1{
   background-image: url("/images/bg6.jpg");
@@ -167,6 +166,13 @@ text-shadow: 2px 2px #cbcdd1;
   /* border-radius: 80.5px; */
   box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
   overflow: hidden;
+}
+
+.box-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-body {
@@ -241,10 +247,8 @@ text-shadow: 2px 2px #cbcdd1;
     height: 4px;
 }
 
-}
-
 .btn {
-  background-color: DodgerBlue;
+  background-color: #fe5722;
   border: none;
   color: white;
   padding: 12px 16px;
@@ -253,7 +257,7 @@ text-shadow: 2px 2px #cbcdd1;
 }
 
 .btn:hover {
-  background-color: RoyalBlue;
+  background-color: #ffffff;
 }
 
 .day-btn {
@@ -263,17 +267,37 @@ text-shadow: 2px 2px #cbcdd1;
   justify-content: flex-end;
 }
 
+.detail-btn {
+  display: flex;
+  justify-content: center;
+}
+
 .edit-btn {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .align-items-center {
   align-items: center;
 }
 
-#navEndAlign {
-  align-items: center;
+.detail-center {
+  margin: auto;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.create-form {
+  display: flex;
+}
