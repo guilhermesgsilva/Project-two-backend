@@ -1,12 +1,41 @@
 body {
   padding: 50px;
   font: 14px  "Trip Sans VF","Trip Sans",Arial,sans-serif;
-  background-color:#EEEEEE; 
+  background-color:#ffffff; 
   color:#303841;
 }
 
-a {
-  color: #303841;
+/* unvisited link */
+a:link {
+  color: red;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  list-style-position: inside;
+  padding-left: 0px;
 }
 
 

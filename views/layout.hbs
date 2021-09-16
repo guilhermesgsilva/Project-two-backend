@@ -16,19 +16,17 @@
    <body>
       <div class="container-fluid">
         <div class="row">
-        <div class="col-md-12">
-        <img src="/images/logo.png" alt="" width="200px">
-         </div> 
-          </div>  
-        <div class="row">
         <div class="col-md-6">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link green-letters" href="/">Home</a>
+                        <img src="/images/logo.png" alt="" width="200px">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
                     </li>
                     {{#if loggedInUser}}
                     <li class="nav-item">
-                        <a class="nav-link green-letters" href="/profile">Profile</a>
+                        <a class="nav-link" href="/profile">Profile</a>
                     </li>
                     {{/if}}
                 </ul>

@@ -12,10 +12,10 @@ function requireLogin(req, res, next) {
 }
 
 // LIST
-router.get("/profile", requireLogin, async (req, res) => {
+router.get("/profile", /*requireLogin,*/ async (req, res) => {
   const user = await User.findById(req.session.currentUser._id);
   const plans = await Plan.find({ user });
-  res.render("plan/profile-plan-list", { plans });
+  res.render("plan/profile-plan-list", { plans, user });
 });
 
 // CREATE
@@ -39,7 +39,7 @@ router.post("/profile/:planId/delete", async (req, res) => {
 });
 
 // EDIT
-router.get("/:userId/:planId/edit", requireLogin, async (req, res) => {
+router.get("/:userId/:planId/edit", /*requireLogin,*/ async (req, res) => {
   const plan = await Plan.findById(req.params.planId);
   const planName = plan.planName;
   const request = await axios.get(
@@ -110,7 +110,7 @@ router.post("/delete-item/:planId/:poiId", async (req, res) => {
 });
 
 // DETAIL
-router.get("/profile/:planId", requireLogin, async (req, res) => {
+router.get("/profile/:planId", /*requireLogin,*/ async (req, res) => {
   const plan = await Plan.findById(req.params.planId);
   res.render("plan/plan-detail", plan);
 });
