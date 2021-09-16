@@ -1,18 +1,24 @@
 <div class="container-fluid">
-    <div class="row"> 
+    <div id="listOfLocations" class="row"> 
         <div  class="col-md-12"><h1>Explore and start planning</h1> </div> 
     </div> 
     <div class="row">
         {{#each listOfPlaces}}
-            <div class="col-md-3"> 
+            <div class="col-md-3 listOfLocations"> 
                 <a href="/poi-detail/{{id}}">{{name}}</a>
-                <img src="{{images.0.source_url}}" width="200px" height="200px" />
+                <img class="img-thumbnail img-fluid" src="{{images.0.source_url}}" />
                 {{!-- <form action="/add-item" method="POST">
                 <button type="submit">Add</button>
                 </form> --}}
             </div>
         {{/each}}
     </div>
+
+    <div> 
+<button onclick="goBack()">Go Back</button>
+<script> function goBack() {window.history.back();} </script>
+</div>
+
 </div>
 
 
