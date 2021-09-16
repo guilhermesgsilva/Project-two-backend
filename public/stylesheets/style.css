@@ -16,7 +16,7 @@ a:link {
 }
 
 /* visited link */
-a:visited {
+/* a:visited {
   color: #303841 !important;
   text-decoration: none;
 }
@@ -119,7 +119,7 @@ border-radius: 5px;
   border-radius: 10px;
 }
 
-h5{
+#h5homecard h5{
 font-size: 1rem;
 }
 
@@ -148,6 +148,12 @@ font-size: 1rem;
   text-shadow: 1px 1px rgb(231, 234, 235);
  }
 
+ #poidetails h1{
+  font-size: 2rem;
+  font-weight: bolder;
+  text-shadow: 1px 1px rgb(231, 234, 235);
+
+ }
 
  .login-card{ 
   margin-top: 100px;
@@ -195,6 +201,11 @@ font-size: 1rem;
     font-size: medium;
   }
 
+  #h4poidetails{
+    font-weight: bold;
+    font-size: medium;
+  }
+
   #h5homecard{
 
     font-size: small;
@@ -236,8 +247,11 @@ font-size: 1rem;
     flex-direction: column;
     align-items: center;}
 
+#listLinks a:link{
+  color:#FF5722;
+}
 
-    hr {
+hr {
    margin: 0rem 0;
     color: #fe5722;
     opacity: 0.9;
