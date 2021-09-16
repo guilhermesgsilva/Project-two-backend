@@ -15,7 +15,7 @@ a:link {
 a:visited {
   color: #303841 !important;
   text-decoration: none;
-}
+} */
 
 /* mouse over link */
 a:hover {
@@ -39,9 +39,8 @@ ul {
 }
 
 
-.homeimage h1{
-  font-size: 15px;
-  font-weight: bold;
+#h1startplanning{
+  text-shadow: 3px 3px #d5dae2;
 }
 
 #homeimage{
@@ -63,7 +62,7 @@ ul {
   align-items: center;
   background-color:#ffffff;
   opacity:50;
-  border-style:groove;
+  border-style:double;
   border-color: ivory;
 }
 
@@ -97,6 +96,7 @@ button{
 background-color: #FF5722;
 color: #ffffff;
 border-color: ivory;
+border-radius: 5px;
 }
 
 .searchtitle{
@@ -118,28 +118,39 @@ border-color: ivory;
 
 .card-img-top{
   padding-bottom: 10px;
+  border-radius: 10px;
 }
 
 h5{
 font-size: 1rem;
+text-shadow: 2px 2px #cbcdd1;
 }
 
-h4{
-  font-weight: bolder;
-}
+
 
 #section1{
-  background-image: url("/images/bg3.jpg");
+  background-image: url("/images/bg6.jpg");
   background-size:cover;
+  margin-top: 10px;
+  border-radius: 50px;
  
 }
 
 #section2 h1{
   font-size: 2rem;
   font-weight: bolder;
-}
+  text-shadow: 1px 1px rgb(231, 234, 235);
 
-.login-card{ 
+ }
+
+ #listOfLocations h1{
+  font-size: 2rem;
+  font-weight: bolder;
+  text-shadow: 1px 1px rgb(231, 234, 235);
+ }
+
+
+ .login-card{ 
   margin-top: 100px;
   margin-bottom: 100px;
   margin-left: 200px;
@@ -159,7 +170,6 @@ h4{
 }
 
 .card-body {
-  padding: 85px 60px 60px;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -173,6 +183,16 @@ h4{
   color:#303841;
   font-weight: normal;
   margin-bottom: 23px; }
+
+  #h4homecard{
+    font-weight: bold;
+    font-size: medium;
+  }
+
+  #h5homecard{
+
+    font-size: small;
+  }
 
  .login-btn {
   padding: 10px 20px 10px;
@@ -193,6 +213,33 @@ h4{
   font-size: 13px;
   line-height: 15;
   font-weight: normal;
+}
+
+.card{
+  border-radius: 20px;
+  border-style: none;
+}
+
+.listOfLocations img{
+  border-radius: 8px;
+
+}
+
+.listOfLocations{
+  display: flex;
+    flex-direction: column;
+    align-items: center;}
+
+
+    hr {
+   margin: 0rem 0;
+    color: #fe5722;
+    opacity: 0.9;
+  }
+
+  hr:not([size]) {
+    height: 4px;
+}
 
 }
 

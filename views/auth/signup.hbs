@@ -1,15 +1,15 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Sign Up</h1>
+        <div id="section1-login" class="login-card" class="row">
+        <div class="col-md-12 card-body" >
+            <h1 class="login-card-description">Sign Up</h1>
             <form action="/signup" method="POST">
                 <label for="">Username</label>
-                <input type="text" name="username" required>
+                <input  class="form-control"  type="text" name="username" required>
 
                 <label for="">Password</label>
-                <input type="password" name="password" required>
+                <input class="form-control" type="password" name="password" required>
 
-                <button type="submit">Signup</button>
+                <button class="btn btn-block login-btn" type="submit">Signup</button>
             </form>
             {{#if errorMessage}}
                 <p>{{errorMessage}}</p>
@@ -17,3 +17,24 @@
         </div>
     </div>
 </div>
+
+
+{{!-- <div id="loginpage" class="container">
+    <div id="section1-login" class="login-card" class="row">
+        <div class="col-md-12 card-body" >
+            <h1 class="login-card-description">Log in to your account</h1>
+            <form action="/login" method="POST">
+                <label for="">Username</label>
+                <input  class="form-control"  type="text" name="username" required>
+
+                <label  for="">Password</label>
+                <input class="form-control"  type="password" name="password" required>
+
+                <button class="btn btn-block login-btn"type="submit">Login</button>
+            </form>
+            {{#if errorMessage}}
+                <p>{{errorMessage}}</p>
+            {{/if}}
+        </div>
+    </div>
+</div> --}}

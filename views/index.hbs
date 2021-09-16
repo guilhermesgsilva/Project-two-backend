@@ -2,12 +2,12 @@
 <div class="container-fluid">
      <div class="row"> 
         <div class="col-md-12 searchtitleflex"> 
-            <div class="searchtitle" ><h1> Start planning your next vacation </h1> 
-            <h5>Dream</h5>
-            <h5>Explore</h5>
-            <h5>Plan</h25>
-        
-            
+            <div class="searchtitle" >
+           <h1 id="h1startplanning"> Start planning your next vacation </h1> 
+           <h5 id="h5home">Dream</h5>     
+           <h5 id="h5home">Explore</h5>     
+           <h5 id="h5home">Plan</h5>           
+
             </div>
             <form class="searchform" action="/search-location" method="GET">
                 <input  class="placeholder" style="width: 35%" type="text" name="searchLocation" placeholder="Where do you want to go?">
@@ -20,43 +20,20 @@
     <div class="row"> 
         <div class="col-md-12"><h1>Check the top rated places in 2021</h1></div>
     </div>
-    <div id="homeimage" class="row">
-        {{#each listOfPlaces}}
-            <div  class= "col-md-4" class="card" style="width: 18rem;">  
-                <img class="card-img-top" src="{{images.0.source_url}}" width="200px" height="200px" />
-                <h4 class="card-title">{{name}}</h4> 
-                <h5 class="card-title">{{location_id}}</h5> 
-                <a href="/poi-detail/{{id}}" class="btn btn-primary">Explore</a>
-            </div>
-        {{/each}}
-    </div>  
+   <div class="card-group row"> 
+  {{#each listOfPlaces}}  
+  <div class="card col-md-4">
+    <img src="{{images.0.source_url}}"  height="200px" class="card-img-top" alt="image1">
+    <hr>
+    <div class="card-body">
+      <h4 id="h4homecard" class="card-title">{{name}}</h4>
+      <h5 id="h5homecard" class="card-title">{{location_id}}</h5> 
+      <a href="/poi-detail/{{id}}" class="btn btn-primary">Explore</a>
+    </div>
+  </div> 
+  {{/each}}
+</div>  
 </div>
   </section>
 
-<div class="card-group">     
-  <div class="card">
-    <img src="{{source_url}}.[0]" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{name}}</h5>
-      <h5 class="card-title">{{location_id}}</h5> 
-     <a href="/poi-detail/{{id}}" class="btn btn-primary">Explore</a>
-
-    </div>    
-  </div>      
-  <div class="card">
-    <img src="{{source_url}}" class="card-img-top" alt="...">
-    <div class="card-body">
-     <h5 class="card-title">{{name}}</h5>
-      <h5 class="card-title">{{location_id}}</h5> 
-     <a href="/poi-detail/{{id}}" class="btn btn-primary">Explore</a>
-    </div>
-  </div>
-  <div class="card">
-    <img src="{{images.2.source_url}}" class="card-img-top" alt="...">
-    <div class="card-body">
-     <h5 class="card-title">{{name}}</h5>
-      <h5 class="card-title">{{location_id}}</h5> 
-     <a href="/poi-detail/{{id}}" class="btn btn-primary">Explore</a>
-    </div>
-  </div>
-</div>       
+  
