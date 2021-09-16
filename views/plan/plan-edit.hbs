@@ -1,63 +1,41 @@
 <div class="container">
-    {{!-- <div class="row">
-        <div class="col-md-12">
-            <h1>Edit Plan</h1>
-        </div>
-    </div> --}}
     <div class="row">
         <div class="col-md-6">
-            {{!-- <form action="" method=""> --}}
-                <table>
-                    <thead>
+            <h2>My Trip to {{plan.planName}}</h2>
+            <div class="day-btn">
+                <form action="/add-day/{{plan._id}}" method="POST">
+                    <button type="submit"> + Day</button>
+                </form>
+                <form action="/delete-day/{{plan._id}}" method="POST">
+                    <button type="submit">- Day</button>
+                </form>    
+            </div>
+        </div>
+        <div class="col-md-6"><h2>Points of Interest:</h2></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 box" style="overflow-y: scroll; height:400px;">
+            <table >
+                <tbody>
+                    {{#each plan.days}}
                         <tr>
-                            <th>
-                                <h2>My Trip to {{plan.planName}}</h2>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{#each plan.days}}
-                        <tr>
-                            <td>
-                                <h3>Day {{math @index "+" 1}}</h3> 
+                                <h3>Day {{math @index "+" 1}}</h3>
+                                <hr>
                                 <ul>
                                     {{#each ids}}
                                     <li><a href="/poi-detail/{{id}}">{{name}}</a></li>
                                     <form action="/delete-item/{{../../plan.id}}/{{id}}" method="POST">
-                                        <button type="submit">Delete</button>
+                                        <button type="submit"><i class="fa fa-trash"></i></button>
                                     </form>
                                     {{/each}}
                                 </ul>
-                            </td>
                         </tr>
-                        {{/each}}
-                        <tr>
-                            <td>
-                                <form action="/add-day/{{plan._id}}" method="POST">
-                                    <button type="submit">Add Day</button>
-                                </form>
-                                <form action="/delete-day/{{plan._id}}" method="POST">
-                                    <button type="submit">Delete Day</button>
-                                </form>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                {{!-- <button type="submit">Save Changes</button>
-            </form>
-            <form action="" method="GET">
-                <button type="submit">Discard Changes</button>
-            </form> --}}
+                    {{/each}}
+                </tbody>
+            </table>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" style="overflow-y: scroll; height:400px;">
             <table>
-                <thead>
-                    <tr>
-                        <th>
-                            <h2>Points of Interest:</h2>
-                        </th>
-                    </tr>
-                </thead>
                 <tbody>
                     <tr>
                         <td>
@@ -72,7 +50,7 @@
                                                 <option value="{{@index}}">{{math @index "+" 1}}</option>
                                                 {{/each}}
                                             </select>
-                                            <button type="submit">Add</button>
+                                            <button type="submit">+</button>
                                         </form>
                                     </li>
                                 {{/each}}
@@ -84,7 +62,10 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6 edit-btn">
+            <form action="/profile" method="GET">
+                <button type="submit">Profile</button>
+            </form>
             <form action="/profile/{{plan.id}}/delete" method="POST">
                 <button type="submit">Delete Plan</button>
             </form>

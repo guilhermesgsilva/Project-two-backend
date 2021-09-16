@@ -1,12 +1,13 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-6 box">
             <h1>Welcome {{user.username}}</h1>
-            <form action="/create-plan" method="POST">
-                <label>Where do you want to go?</label>
-                <input type="text" name="planName">
+            <form class="create-form" action="/create-plan" method="POST">
+                <input type="text" name="planName" placeholder="Where do you want to go?">
                 <button type="submit">Create Plan</button>
             </form>
+        </div>
+        <div class="col-md-6" style="overflow-y: scroll; height:400px;">
             <ul>
                 {{#each plans}}
                     <li>

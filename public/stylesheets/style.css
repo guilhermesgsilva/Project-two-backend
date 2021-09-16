@@ -7,25 +7,25 @@ body {
 
 /* unvisited link */
 a:link {
-  color: red;
+  color: #303841 !important;
   text-decoration: none;
 }
 
 /* visited link */
 a:visited {
-  color: green;
+  color: #303841 !important;
   text-decoration: none;
 }
 
 /* mouse over link */
 a:hover {
-  color: hotpink;
+  color: #FF7E55 !important;
   text-decoration: none;
 }
 
 /* selected link */
 a:active {
-  color: blue;
+  color: #FF5722 !important;
   text-decoration: none;
 }
 
@@ -53,7 +53,7 @@ ul {
 .btn{
  
     background-color: #FF5722;
-    color: #EEEEEE;
+    color: #ffffff;
     border-color: ivory;
  
 }
@@ -61,7 +61,7 @@ ul {
 .placeholder{
   min-height: 4em;
   align-items: center;
-  background-color:#EEEEEE;
+  background-color:#ffffff;
   opacity:50;
   border-style:groove;
   border-color: ivory;
@@ -81,9 +81,21 @@ ul {
   flex-wrap: nowrap;
 }
 
+.create-form {
+  display: flex;
+}
+
+.create-form input {
+  min-height: 4em;
+  background-color:#ffffff;
+  border-style:groove;
+  border-color: ivory;
+  width: 35%
+}
+
 button{
 background-color: #FF5722;
-color: #EEEEEE;
+color: #ffffff;
 border-color: ivory;
 }
 
@@ -92,14 +104,13 @@ border-color: ivory;
     position: absolute;
     padding-top: 100px;
     align-items: center;
-    color:#EEEEEE;
+    color:#ffffff;
 }
 
 .searchtitleflex{
   display: flex;
     flex-direction: column;
 }
-
 
 .row{
   padding-top: 30px;
@@ -108,8 +119,6 @@ border-color: ivory;
 .card-img-top{
   padding-bottom: 10px;
 }
-
-
 
 h5{
 font-size: 1rem;
@@ -128,11 +137,9 @@ h4{
 #section2 h1{
   font-size: 2rem;
   font-weight: bolder;
+}
 
- }
-
-
- .login-card{ 
+.login-card{ 
   margin-top: 100px;
   margin-bottom: 100px;
   margin-left: 200px;
@@ -142,16 +149,14 @@ h4{
   box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
   overflow: hidden;
   padding: 50px 50px 50px 50px;
-  }
-   
- /* .card-body {
-  padding: 70px 150px 60px;
-  display: flex;
-  align-content: stretch;
-  flex-direction: column;
-  align-content: center;
+}
 
-} */
+.box {
+  border: 0;
+  /* border-radius: 80.5px; */
+  box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+  overflow: hidden;
+}
 
 .card-body {
   padding: 85px 60px 60px;
@@ -162,7 +167,6 @@ h4{
       padding: 35px 24px;
   }
 }
-
 
  .login-card-description {
   font-size: 30px;
@@ -191,3 +195,38 @@ h4{
   font-weight: normal;
 
 }
+
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+.day-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.edit-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-evenly;
+}
+.align-items-center {
+  align-items: center;
+}
+
+#navEndAlign {
+  align-items: center;
+}
+

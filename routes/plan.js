@@ -12,7 +12,7 @@ function requireLogin(req, res, next) {
 }
 
 // LIST
-router.get("/profile", /*requireLogin,*/ async (req, res) => {
+router.get("/profile", requireLogin, async (req, res) => {
   const user = await User.findById(req.session.currentUser._id);
   const plans = await Plan.find({ user });
   res.render("plan/profile-plan-list", { plans, user });
@@ -39,11 +39,11 @@ router.post("/profile/:planId/delete", async (req, res) => {
 });
 
 // EDIT
-router.get("/:userId/:planId/edit", /*requireLogin,*/ async (req, res) => {
+router.get("/:userId/:planId/edit", requireLogin, async (req, res) => {
   const plan = await Plan.findById(req.params.planId);
   const planName = plan.planName;
   const request = await axios.get(
-    `https://www.triposo.com/api/20210615/poi.json?location_id=${planName}&count=10&account=${process.env.TRIPOSO_ACCOUNT}&token=${process.env.TRIPOSO_TOKEN}`
+    `https://www.triposo.com/api/20210615/poi.json?location_id=${planName}&count=20&account=${process.env.TRIPOSO_ACCOUNT}&token=${process.env.TRIPOSO_TOKEN}`
   );
   const listOfPlaces = request.data.results;
   res.render("plan/plan-edit", { plan, listOfPlaces });
@@ -110,7 +110,7 @@ router.post("/delete-item/:planId/:poiId", async (req, res) => {
 });
 
 // DETAIL
-router.get("/profile/:planId", /*requireLogin,*/ async (req, res) => {
+router.get("/profile/:planId", requireLogin, async (req, res) => {
   const plan = await Plan.findById(req.params.planId);
   res.render("plan/plan-detail", plan);
 });

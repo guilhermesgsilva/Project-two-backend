@@ -1,15 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Plan Detail</h1>
+            <h2>My Trip to {{planName}}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 box">
             <table>
-                <thead>
-                    <tr>
-                        <th>
-                            <h2>My Trip to {{planName}}</h2>
-                        </th>
-                    </tr>
-                </thead>
                 <tbody>
                     {{#each days}}
                     <tr>
@@ -25,6 +22,10 @@
                     {{/each}}
                 </tbody>
             </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <form action="/profile/{{id}}/edit" method="GET">
                 <button type="submit">Edit</button>
             </form>
