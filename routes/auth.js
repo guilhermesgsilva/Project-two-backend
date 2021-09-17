@@ -19,7 +19,7 @@ return;
 
 const user = await User.findOne({username});
 if (user !== null) {
-res.render("auth/signup", { errorMessage: "User already exists" });
+res.render("auth/signup", { errorMessage: "User already exists. Try again" });
  return;
     }
 
@@ -43,14 +43,14 @@ eturn;
 
 const user = await User.findOne({ username });
 if (user === null) {
-res.render("auth/login", { errorMessage: "Invalid login" });
+res.render("auth/login", { errorMessage: "Invalid login. Try again" });
 return;}
   
 if (bcrypt.compareSync(password, user.password)) {
 req.session.currentUser = user;
 res.redirect("/profile");
 } else {
-res.render("auth/login", {errorMessage: "Invalid login" });
+res.render("auth/login", {errorMessage: "Invalid login. Try again" });
 }
   });
 
