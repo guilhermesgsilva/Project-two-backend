@@ -53,7 +53,7 @@ ul {
 
 
 #h1startplanning{
-  text-shadow: 3px 3px #d5dae2;
+  text-shadow: 1px 1px #b3bbc9;
 }
 
 #homeimage{
@@ -137,8 +137,9 @@ font-size: 1rem;
 }
 
 #section1{
-  background-image: url("/images/bg6.jpg");
+  background-image: url("/images/bg7.jpg");
   background-size:cover;
+  background-position: center center;
   margin-top: 10px;
   border-radius: 50px;
  
@@ -162,6 +163,10 @@ font-size: 1rem;
   font-weight: bolder;
   text-shadow: 1px 1px rgb(231, 234, 235);
 
+ }
+
+ #rating{
+   font-weight: bold;
  }
 
  .login-card{ 
@@ -263,7 +268,7 @@ font-size: 1rem;
 
 hr {
    margin: 0rem 0;
-    color: #fe5722;
+    color: #FF5722;
     opacity: 0.9;
   }
 
@@ -275,6 +280,15 @@ hr {
   background-color: #fe5722;
   border: none;
   color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btnsignup {
+  background-color: white;
+  border: none;
+  color: #303841;
   padding: 12px 16px;
   font-size: 16px;
   cursor: pointer;
