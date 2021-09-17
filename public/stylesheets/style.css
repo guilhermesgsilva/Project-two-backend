@@ -132,6 +132,7 @@ font-size: 1rem;
 #section1{
   background-image: url("/images/bg7.jpg");
   background-size:cover;
+  background-position: center center;
   margin-top: 10px;
   border-radius: 50px;
  
@@ -155,6 +156,10 @@ font-size: 1rem;
   font-weight: bolder;
   text-shadow: 1px 1px rgb(231, 234, 235);
 
+ }
+
+ #rating{
+   font-weight: bold;
  }
 
  .login-card{ 
