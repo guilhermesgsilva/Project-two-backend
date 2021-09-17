@@ -1,6 +1,6 @@
 <section id="section1"> 
 <div class="container-fluid">
-     <div class="row"> 
+     <div class="row row-margin-top-30"> 
         <div class="col-md-12 searchtitleflex"> 
             <div class="searchtitle" >
            <h1 id="h1startplanning"> Start planning your next vacation </h1> 
@@ -10,25 +10,27 @@
 
             </div>
             <form class="searchform" action="/search-location" method="GET">
-                <input  class="placeholder" style="width: 35%" type="text" name="searchLocation" placeholder="Where do you want to go?">
+                <input  class="placeholder" style="width: 36%" type="text" name="searchLocation" placeholder="Where do you want to go?">
                 <button type="submit">Start planning</button>
             </form>
         </div>
     </div>
     </section>
     <section id="section2">
-    <div class="row"> 
+    <div class="row row-margin-top-30"> 
         <div class="col-md-12"><h1>Check the top rated places in 2021</h1></div>
     </div>
-   <div class="card-group row"> 
+   <div class="card-group row row-margin-top-30"> 
   {{#each listOfPlaces}}  
   <div class="card col-md-4">
     <img src="{{images.0.source_url}}"  height="200px" class="card-img-top" alt="image1">
     <hr>
     <div class="card-body">
       <h4 id="h4homecard" class="card-title">{{name}}</h4>
-      <h5 id="h5homecard" class="card-title">{{location_id}}</h5> 
-      <a href="/poi-detail/{{id}}" class="btn btn-primary">Explore</a>
+      <h5 id="h5homecard" class="card-title">{{location_id}}</h5>
+      <form action="/poi-detail/{{id}}" method="GET">
+      <button class="btn btn-primary white-letters">Explore</button>
+      </form>
     </div>
   </div> 
   {{/each}}

@@ -11,7 +11,7 @@ module.exports = router;
 
 router.get("/search-location", async (req, res) => {
   const locationId = req.query.searchLocation
-  const request = await axios.get(`https://www.triposo.com/api/20210615/poi.json?location_id=${locationId}&count=10&account=${process.env.TRIPOSO_ACCOUNT}&token=${process.env.TRIPOSO_TOKEN}`)
+  const request = await axios.get(`https://www.triposo.com/api/20210615/poi.json?location_id=${locationId}&count=8&account=${process.env.TRIPOSO_ACCOUNT}&token=${process.env.TRIPOSO_TOKEN}`)
   const listOfPlaces = request.data.results;
   res.render("poi/list-of-locations", {listOfPlaces});
 });

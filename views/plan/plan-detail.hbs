@@ -1,31 +1,30 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>My Trip to {{planName}}</h2>
+    <div class="row margin-top-10">
+        <div class="col-md-6 detail-center">
+            <h2 class="text-center">My Trip to {{planName}}</h2>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 box">
-            <table>
+    <div class="row margin-top-10">
+        <div class="col-md-6 box detail-center">
+            <table class="detail-center">
                 <tbody>
                     {{#each days}}
                     <tr>
-                        <td>
-                            <h3>Day {{math @index "+" 1}}</h3> 
+                            <h3 class="text-center">Day {{math @index "+" 1}}</h3>
+                            <hr>
                             <ul>
                                 {{#each ids}}
-                                <li><a href="/poi-detail/{{id}}">{{name}}</a></li>
+                                <li class="text-center"><a href="/poi-detail/{{id}}">{{name}}</a></li>
                                 {{/each}}
                             </ul>
-                        </td>
                     </tr>
                     {{/each}}
                 </tbody>
             </table>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
+    <div class="row margin-top-10">
+        <div class="col-md-12 detail-btn">
             <form action="/profile/{{id}}/edit" method="GET">
                 <button type="submit">Edit</button>
             </form>
