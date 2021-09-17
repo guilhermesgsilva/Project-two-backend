@@ -2,6 +2,8 @@
   margin-top: 30px;
 }
 
+
+
 body {
   padding: 0px 50px 25px;
   font: 14px  "Trip Sans VF","Trip Sans",Arial,sans-serif;
@@ -16,7 +18,7 @@ a:link {
 }
 
 /* visited link */
-/* a:visited {
+a:visited {
   color: #303841 !important;
   text-decoration: none;
 }
@@ -258,7 +260,7 @@ hr {
   }
 
   hr:not([size]) {
-    height: 4px;
+    height: 1px;
 }
 
 .btn {
@@ -272,6 +274,7 @@ hr {
 
 .btn:hover {
   background-color: #ffffff;
+  color: #fe5722;
 }
 
 .day-btn {
@@ -314,4 +317,8 @@ hr {
 
 .create-form {
   display: flex;
+}
+
+.white-letters {
+  color: #ffffff;
 }

@@ -1,8 +1,8 @@
 <div class="container-fluid">
-    <div id="listOfLocations" class="row"> 
-        <div  class="col-md-12"><h1>Explore and start planning</h1> </div> 
+    <div id="listOfLocations" class="row row-margin-top-30"> 
+        <div  class="col-md-12"><h1>Explore and start planning</h1></div> 
     </div> 
-    <div class="row">
+    <div class="row row-margin-top-30">
         {{#each listOfPlaces}}
             <div class="col-md-3 listOfLocations"> 
                 <a id="listLinks" href="/poi-detail/{{id}}">{{name}}</a>
@@ -13,12 +13,13 @@
             </div>
         {{/each}}
     </div>
-
-    <div> 
-<button onclick="goBack()">Go Back</button>
-<script> function goBack() {window.history.back();} </script>
+    <div class="row row-margin-top-30">
+        <div class="col-md-12">
+            <button onclick="goBack()">Go Back</button>    
+        </div>
+    </div>
 </div>
 
-</div>
+<script> function goBack() {window.history.back()}; </script>
 
 

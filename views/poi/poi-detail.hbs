@@ -1,27 +1,32 @@
 <div class="container-fluid">
-<div class="row"> 
-<div id="poidetails" class="col-md-12">
-<div> 
-<h1>{{name}}</h1>
-<p>{{snippet}} </p>
-<p>Traveler's rating: {{score}}</p> 
-   <h4 id="h4poidetails">Check some of the main point of interest around {{name}} </h4>
-</div> 
-</div> 
-</div> 
- <div class="row">
+    <div class="row row-margin-top-30"> 
+        <div id="poidetails" class="col-md-12">
+            <div> 
+                <h1>{{name}}</h1>
+                <p>{{snippet}} </p>
+                <p>Traveler's rating: {{score}}</p> 
+                <h4 id="h4poidetails">Check some of the main point of interest around {{name}} </h4>
+            </div> 
+        </div> 
+    </div> 
+    <div class="row row-margin-top-30">
         {{#each images}}
             <div class="col-md-4 listOfLocations"> 
                 <img class="img-thumbnail img-fluid" src="{{source_url}}" alt="image1" />
             </div>
         {{/each}}
     </div>
-
-<div> 
-<button onclick="goBack()">Go Back</button>
-<script> function goBack() {window.history.back();} </script>
+    <div class="row row-margin-top-30">
+        <div class="col-md-12">
+            <button onclick="goBack()">Go Back</button>
+        </div>
+    </div>
 </div>
- </div>
+
+
+<script> function goBack() {window.history.back()}; </script>
+
+
 
  
 

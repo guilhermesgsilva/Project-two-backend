@@ -1,6 +1,6 @@
 <section id="section1"> 
 <div class="container-fluid">
-     <div class="row"> 
+     <div class="row row-margin-top-30"> 
         <div class="col-md-12 searchtitleflex"> 
             <div class="searchtitle" >
            <h1 id="h1startplanning"> Start planning your next vacation </h1> 
@@ -27,8 +27,10 @@
     <hr>
     <div class="card-body">
       <h4 id="h4homecard" class="card-title">{{name}}</h4>
-      <h5 id="h5homecard" class="card-title">{{location_id}}</h5> 
-      <a href="/poi-detail/{{id}}" class="btn btn-primary">Explore</a>
+      <h5 id="h5homecard" class="card-title">{{location_id}}</h5>
+      <form action="/poi-detail/{{id}}" method="GET">
+      <button class="btn btn-primary white-letters">Explore</button>
+      </form>
     </div>
   </div> 
   {{/each}}
