@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row margin-top-10">
+    <div class="row row-margin-top-30">
         <div class="col-md-6 detail-center">
             <h2 class="text-center">My Trip to {{planName}}</h2>
         </div>
@@ -10,11 +10,11 @@
                 <tbody>
                     {{#each days}}
                     <tr>
-                            <h3 class="text-center">Day {{math @index "+" 1}}</h3>
+                            <h3 class="text-center margin-top-15">Day {{math @index "+" 1}}</h3>
                             <hr>
                             <ul>
                                 {{#each ids}}
-                                <li class="text-center"><a href="/poi-detail/{{id}}">{{name}}</a></li>
+                                <li class="text-center margin-top-5"><a href="/poi-detail/{{id}}">{{name}}</a></li>
                                 {{/each}}
                             </ul>
                     </tr>

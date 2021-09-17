@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row margin-top-10">
+    <div class="row row-margin-top-30">
         <div class="col-md-6 box-align">
             <h2>Welcome {{user.username}}</h2>
             <form class="create-form" action="/create-plan" method="POST">
@@ -10,14 +10,17 @@
         <div class="col-md-6 box" style="overflow-y: scroll; height:470px;">
             <ul>
                 {{#each plans}}
-                    <li>
-                        <a href="/profile/{{id}}">My Trip to {{planName}}</a>
-                        <form action="/profile/{{id}}/edit" method="GET">
-                            <button type="submit">Edit</button>
-                        </form>
-                        <form action="/profile/{{id}}/delete" method="POST">
-                            <button type="submit">Delete</button>
-                        </form>
+                    <li class="text-center margin-top-15">
+                        <h5 class="margin-top-15"><a href="/profile/{{id}}">My Trip to {{planName}}</a></h5>
+                        <hr>
+                        <div class="justify-contente-center margin-top-5">
+                            <form action="/profile/{{id}}/edit" method="GET">
+                                <button class="btn2" type="submit">Edit</button>
+                            </form>
+                            <form action="/profile/{{id}}/delete" method="POST">
+                                <button class="btn2" type="submit">Delete</button>
+                            </form>
+                        </div>
                     </li>
                 {{/each}}    
             </ul>

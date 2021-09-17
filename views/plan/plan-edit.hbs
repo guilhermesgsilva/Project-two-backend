@@ -11,22 +11,24 @@
                 </form>    
             </div>
         </div>
-        <div class="col-md-6"><h2>Points of Interest:</h2></div>
+        <div class="col-md-6"><h2>Points of Interest</h2></div>
     </div>
-    <div class="row margin-top-10">
-        <div class="col-md-6 box" style="overflow-y: scroll; height:400px;">
+    <div class="row margin-top-15">
+        <div class="col-md-6 box text-center" style="overflow-y: scroll; height:400px;">
             <table >
                 <tbody>
                     {{#each plan.days}}
-                        <tr>
-                                <h3>Day {{math @index "+" 1}}</h3>
+                        <tr >
+                                <h4 class="margin-top-15">Day {{math @index "+" 1}}</h4>
                                 <hr>
-                                <ul>
+                                <ul class="">
                                     {{#each ids}}
-                                    <li><a href="/poi-detail/{{id}}">{{name}}</a></li>
-                                    <form action="/delete-item/{{../../plan.id}}/{{id}}" method="POST">
-                                        <button type="submit"><i class="fa fa-trash"></i></button>
-                                    </form>
+                                    <div class="margin-top-5 align-center text-center">
+                                        <form action="/delete-item/{{../../plan.id}}/{{id}}" method="POST">
+                                            <button type="submit"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                        <li class="padding-5"><a href="/poi-detail/{{id}}">{{name}}</a></li>
+                                    </div>
                                     {{/each}}
                                 </ul>
                         </tr>
@@ -42,7 +44,7 @@
                             <ul>
                                 {{#each listOfPlaces}}
                                     <li>
-                                        <a href="/poi-detail/{{id}}">{{name}}</a>
+                                        <h5 class="margin-top-15"><a href="/poi-detail/{{id}}">{{name}}</a></h5>
                                         <form action="/add-item/{{../plan.id}}/{{id}}" method="POST">
                                             <select name="planDay">
                                                 <option value="-1">Day</option>
@@ -63,9 +65,6 @@
     </div>
     <div class="row margin-top-10">
         <div class="col-md-6 edit-btn">
-            <form action="/profile" method="GET">
-                <button type="submit">Profile</button>
-            </form>
             <form action="/profile/{{plan.id}}/delete" method="POST">
                 <button type="submit">Delete Plan</button>
             </form>

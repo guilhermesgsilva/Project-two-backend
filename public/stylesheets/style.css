@@ -2,6 +2,13 @@
   margin-top: 30px;
 }
 
+.margin-top-15 {
+  margin-top: 15px;
+}
+
+.margin-top-5 {
+  margin-top: 5px;
+}
 
 
 body {
@@ -88,11 +95,11 @@ ul {
 
 
 .create-form input {
-  min-height: 4em;
+  min-height: 2em;
   background-color:#ffffff;
   border-style:groove;
   border-color: ivory;
-  /* width: 35% */
+  width: 250px;
 }
 
 button{
@@ -171,9 +178,10 @@ font-size: 1rem;
 
 .box {
   border: 0;
-  /* border-radius: 80.5px; */
+  border-radius: 40px;
   box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
   overflow: hidden;
+  padding-bottom: 15px;
 }
 
 .box-align {
@@ -321,4 +329,19 @@ hr {
 
 .white-letters {
   color: #ffffff;
+}
+
+.justify-contente-center {
+  display: flex;
+  justify-content: center;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.padding-5 {
+  padding-left: 5px;
 }
